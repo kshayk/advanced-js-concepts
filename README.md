@@ -245,7 +245,7 @@ Note that this should only be used if you want the object's key name to be the s
 ## Script Tag Defer/Async
 
 [Script link](https://github.com/kshayk/advanced-js-conceptys/blob/main/scriptDefer.js)
-| [HTML link](https://github.com/kshayk/advanced-js-conceptys/blob/main/scriptDefer.js)
+| [HTML link](https://github.com/kshayk/advanced-js-conceptys/blob/main/scriptTagDefer.html)
 
 Let's assume we have this HTML page:
 
