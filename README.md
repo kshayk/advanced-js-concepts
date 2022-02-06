@@ -2,7 +2,7 @@
 
 In this tutorial we will look at some less-known JavaScript concepts and syntaxes as well as advanced concepts that are very useful and helpful to know.
 
-###Nullish Coalescing
+## Nullish Coalescing
 
 [Script Link](https://github.com/kshayk/advanced-js-conceptys/blob/main/nullishCoalescing.js)
 
@@ -67,7 +67,7 @@ Basically the ```??``` operator will return the value of the first parameter if 
 
 
 
-###Styling console.log
+## Styling console.log
 
 [Script Link](https://github.com/kshayk/advanced-js-conceptys/blob/main/nullishCoalescing.js)
 
@@ -92,7 +92,7 @@ console.log(`%c${description} With Tax:%c $${total}`, 'font-weight: bold', 'colo
 This will disregard the styling in the first ```%c``` and apply the styling to the second ```%c``` part of the output, based on the corresponding parameter.
 
 
-###Optional Chaining
+## Optional Chaining
 
 [Script Link](https://github.com/kshayk/advanced-js-conceptys/blob/main/optionalChaining.js)
 
@@ -206,7 +206,7 @@ Since the ```cars``` array property does not exist in the ```Shay``` class, it w
 array existed, it would have returned the index 1 of this array.
 
 
-###Object Shorthand
+## Object Shorthand
 
 [Script Link](https://github.com/kshayk/advanced-js-conceptys/blob/main/objectShorthand.js)
 
@@ -242,7 +242,7 @@ const Shay = {
 
 Note that this should only be used if you want the object's key name to be the same as the variable name. 
 
-###Script Tag Defer/Async
+## Script Tag Defer/Async
 
 [Script link](https://github.com/kshayk/advanced-js-conceptys/blob/main/scriptDefer.js)
 | [HTML link](https://github.com/kshayk/advanced-js-conceptys/blob/main/scriptDefer.js)
@@ -298,7 +298,7 @@ tag. This will tell the tag that it should only load after the HTML page is full
 Now, the button will have the styling that the JS script has applied to it in ```scriptDefer.js```.
 
 
-###Block Statement
+## Block Statement
 
 [Script Link](https://github.com/kshayk/advanced-js-conceptys/blob/main/blockStatement.js)
 
@@ -395,7 +395,7 @@ switch (a) {
 ```
 
 
-###The "In" Keyword
+## The "In" Keyword
 
 [Script Link](https://github.com/kshayk/advanced-js-conceptys/blob/main/inKeyword.js)
 
@@ -433,7 +433,7 @@ if ("name" in person) {
 The if statement will not get accessed because the property has been deleted.
 
 
-###Tagged Template Literals
+## Tagged Template Literals
 
 [Script Link](https://github.com/kshayk/advanced-js-conceptys/blob/main/taggedTemplateLiterals.js)
 
@@ -533,7 +533,7 @@ function custom(strings, ...values) {
 ```
 
 
-###Generator Functions
+## Generator Functions
 
 [Script Link](https://github.com/kshayk/advanced-js-conceptys/blob/main/generatorFunctions.js)
 
@@ -641,7 +641,7 @@ This simple example is basically incrementing the ID by one each time the ```nex
 ```while``` loop, we can use as many ```next()``` as we would like to and it will never return a ```done: true```.
 
 
-###Dynamically imported modules
+## Dynamically imported modules
 
 [Script Link](https://github.com/kshayk/advanced-js-conceptys/blob/main/dynamicModuleImport.js)
 
@@ -743,7 +743,7 @@ console.log("in main file");
 This will make sure the execution of ```printModule()``` happens first and only then, it will run the ```console.log("in main file");```
 
 
-###Loop Labels
+## Loop Labels
 
 [Script Link](https://github.com/kshayk/advanced-js-conceptys/blob/main/loopLabels.js)
 
@@ -834,7 +834,7 @@ Note that a simple ```break``` statement will not work inside a scope as a stand
 to actually exit the scope code.
 
 
-###Object.freeze
+## Object.freeze
 
 [Script Link](https://github.com/kshayk/advanced-js-conceptys/blob/main/objectFreeze.js)
 
