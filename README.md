@@ -2,7 +2,9 @@
 
 In this tutorial we will look at some less-known JavaScript concepts and syntaxes as well as advanced concepts that are very useful and helpful to know.
 
-###<ins>Nullish Coalescing</ins>
+###Nullish Coalescing
+
+[Script Link](https://github.com/kshayk/advanced-js-conceptys/blob/main/nullishCoalescing.js)
 
 Let's look at this piece of code:
 
@@ -65,7 +67,10 @@ Basically the ```??``` operator will return the value of the first parameter if 
 
 
 
-###<ins>Styling console.log</ins>
+###Styling console.log
+
+[Script Link](https://github.com/kshayk/advanced-js-conceptys/blob/main/nullishCoalescing.js)
+
 
 We all know the ```console.log``` function, but we can also use it to style the output that prints to the log.
 
@@ -87,7 +92,10 @@ console.log(`%c${description} With Tax:%c $${total}`, 'font-weight: bold', 'colo
 This will disregard the styling in the first ```%c``` and apply the styling to the second ```%c``` part of the output, based on the corresponding parameter.
 
 
-###<ins>Optional Chaining</ins>
+###Optional Chaining
+
+[Script Link](https://github.com/kshayk/advanced-js-conceptys/blob/main/optionalChaining.js)
+
 
 Let's say we have this piece of code:
 
@@ -198,7 +206,9 @@ Since the ```cars``` array property does not exist in the ```Shay``` class, it w
 array existed, it would have returned the index 1 of this array.
 
 
-###<ins>Object Shorthand</ins>
+###Object Shorthand
+
+[Script Link](https://github.com/kshayk/advanced-js-conceptys/blob/main/objectShorthand.js)
 
 Let's say we have this piece of code:
 
@@ -232,7 +242,10 @@ const Shay = {
 
 Note that this should only be used if you want the object's key name to be the same as the variable name. 
 
-###<ins>Script Tag Defer/Async</ins>
+###Script Tag Defer/Async
+
+[Script link](https://github.com/kshayk/advanced-js-conceptys/blob/main/scriptDefer.js)
+| [HTML link](https://github.com/kshayk/advanced-js-conceptys/blob/main/scriptDefer.js)
 
 Let's assume we have this HTML page:
 
@@ -285,7 +298,9 @@ tag. This will tell the tag that it should only load after the HTML page is full
 Now, the button will have the styling that the JS script has applied to it in ```scriptDefer.js```.
 
 
-###<ins>Block Statement</ins>
+###Block Statement
+
+[Script Link](https://github.com/kshayk/advanced-js-conceptys/blob/main/blockStatement.js)
 
 As we know, JS variables are scoped, meaning that a variable that was declared in a function will only be available inside 
 that function, unless the function returns it.
@@ -380,7 +395,9 @@ switch (a) {
 ```
 
 
-###<ins>The "In" Keyword</ins>
+###The "In" Keyword
+
+[Script Link](https://github.com/kshayk/advanced-js-conceptys/blob/main/inKeyword.js)
 
 the ```in``` keyword allows us to check, using an if statement, whether a property exists on an object.
 
@@ -416,7 +433,9 @@ if ("name" in person) {
 The if statement will not get accessed because the property has been deleted.
 
 
-###<ins>Tagged Template Literals</ins>
+###Tagged Template Literals
+
+[Script Link](https://github.com/kshayk/advanced-js-conceptys/blob/main/taggedTemplateLiterals.js)
 
 A template literal is basically the  "``" (back ticks) syntax where we are able to write some string but also add some dynamic values using the ```{}``` symbol. For example:
 
@@ -514,7 +533,9 @@ function custom(strings, ...values) {
 ```
 
 
-###<ins>Generator Functions</ins>
+###Generator Functions
+
+[Script Link](https://github.com/kshayk/advanced-js-conceptys/blob/main/generatorFunctions.js)
 
 We are all aware of a standard JS function syntax that might return some value at the end:
 
@@ -620,7 +641,9 @@ This simple example is basically incrementing the ID by one each time the ```nex
 ```while``` loop, we can use as many ```next()``` as we would like to and it will never return a ```done: true```.
 
 
-###<ins>Dynamically imported modules</ins>
+###Dynamically imported modules
+
+[Script Link](https://github.com/kshayk/advanced-js-conceptys/blob/main/dynamicModuleImport.js)
 
 Let's say we have a simple function that gets exported as a module:
 
@@ -720,7 +743,9 @@ console.log("in main file");
 This will make sure the execution of ```printModule()``` happens first and only then, it will run the ```console.log("in main file");```
 
 
-###<ins>Loop Labels</ins>
+###Loop Labels
+
+[Script Link](https://github.com/kshayk/advanced-js-conceptys/blob/main/loopLabels.js)
 
 Let's consider this code:
 
@@ -809,7 +834,9 @@ Note that a simple ```break``` statement will not work inside a scope as a stand
 to actually exit the scope code.
 
 
-###<ins>Object.freeze</ins>
+###Object.freeze
+
+[Script Link](https://github.com/kshayk/advanced-js-conceptys/blob/main/objectFreeze.js)
 
 Let's assume we have this code:
 
