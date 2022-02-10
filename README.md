@@ -986,3 +986,5 @@ actually break on run-time even without the ```"use strict"``` usage.
 *closures
 *function chaining
 *pass by value vs. pass by reference
+#   c u s t o m - t i m e o u t - n p m  
+ 
