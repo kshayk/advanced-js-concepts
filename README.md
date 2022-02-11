@@ -4,7 +4,7 @@ In this tutorial we will look at some less-known JavaScript concepts and syntaxe
 
 ## Nullish Coalescing
 
-[Script Link](https://github.com/kshayk/advanced-js-conceptys/blob/main/nullishCoalescing.js)
+[Script Link](https://github.com/kshayk/advanced-js-concepts/blob/main/nullishCoalescing.js)
 
 Let's look at this piece of code:
 
@@ -69,7 +69,7 @@ Basically the ```??``` operator will return the value of the first parameter if 
 
 ## Styling console.log
 
-[Script Link](https://github.com/kshayk/advanced-js-conceptys/blob/main/nullishCoalescing.js)
+[Script Link](https://github.com/kshayk/advanced-js-concepts/blob/main/nullishCoalescing.js)
 
 
 We all know the ```console.log``` function, but we can also use it to style the output that prints to the log.
@@ -94,7 +94,7 @@ This will disregard the styling in the first ```%c``` and apply the styling to t
 
 ## Optional Chaining
 
-[Script Link](https://github.com/kshayk/advanced-js-conceptys/blob/main/optionalChaining.js)
+[Script Link](https://github.com/kshayk/advanced-js-concepts/blob/main/optionalChaining.js)
 
 
 Let's say we have this piece of code:
@@ -208,7 +208,7 @@ array existed, it would have returned the index 1 of this array.
 
 ## Object Shorthand
 
-[Script Link](https://github.com/kshayk/advanced-js-conceptys/blob/main/objectShorthand.js)
+[Script Link](https://github.com/kshayk/advanced-js-concepts/blob/main/objectShorthand.js)
 
 Let's say we have this piece of code:
 
@@ -244,8 +244,8 @@ Note that this should only be used if you want the object's key name to be the s
 
 ## Script Tag Defer/Async
 
-[Script link](https://github.com/kshayk/advanced-js-conceptys/blob/main/scriptDefer.js)
-| [HTML link](https://github.com/kshayk/advanced-js-conceptys/blob/main/scriptTagDefer.html)
+[Script link](https://github.com/kshayk/advanced-js-concepts/blob/main/scriptDefer.js)
+| [HTML link](https://github.com/kshayk/advanced-js-concepts/blob/main/scriptTagDefer.html)
 
 Let's assume we have this HTML page:
 
@@ -300,7 +300,7 @@ Now, the button will have the styling that the JS script has applied to it in ``
 
 ## Block Statement
 
-[Script Link](https://github.com/kshayk/advanced-js-conceptys/blob/main/blockStatement.js)
+[Script Link](https://github.com/kshayk/advanced-js-concepts/blob/main/blockStatement.js)
 
 As we know, JS variables are scoped, meaning that a variable that was declared in a function will only be available inside 
 that function, unless the function returns it.
@@ -397,7 +397,7 @@ switch (a) {
 
 ## The "In" Keyword
 
-[Script Link](https://github.com/kshayk/advanced-js-conceptys/blob/main/inKeyword.js)
+[Script Link](https://github.com/kshayk/advanced-js-concepts/blob/main/inKeyword.js)
 
 the ```in``` keyword allows us to check, using an if statement, whether a property exists on an object.
 
@@ -435,7 +435,7 @@ The if statement will not get accessed because the property has been deleted.
 
 ## Tagged Template Literals
 
-[Script Link](https://github.com/kshayk/advanced-js-conceptys/blob/main/taggedTemplateLiterals.js)
+[Script Link](https://github.com/kshayk/advanced-js-concepts/blob/main/taggedTemplateLiterals.js)
 
 A template literal is basically the  "``" (back ticks) syntax where we are able to write some string but also add some dynamic values using the ```{}``` symbol. For example:
 
@@ -535,7 +535,7 @@ function custom(strings, ...values) {
 
 ## Generator Functions
 
-[Script Link](https://github.com/kshayk/advanced-js-conceptys/blob/main/generatorFunctions.js)
+[Script Link](https://github.com/kshayk/advanced-js-concepts/blob/main/generatorFunctions.js)
 
 We are all aware of a standard JS function syntax that might return some value at the end:
 
@@ -643,7 +643,7 @@ This simple example is basically incrementing the ID by one each time the ```nex
 
 ## Dynamically imported modules
 
-[Script Link](https://github.com/kshayk/advanced-js-conceptys/blob/main/dynamicModuleImport.js)
+[Script Link](https://github.com/kshayk/advanced-js-concepts/blob/main/dynamicModuleImport.js)
 
 Let's say we have a simple function that gets exported as a module:
 
@@ -745,7 +745,7 @@ This will make sure the execution of ```printModule()``` happens first and only 
 
 ## Loop Labels
 
-[Script Link](https://github.com/kshayk/advanced-js-conceptys/blob/main/loopLabels.js)
+[Script Link](https://github.com/kshayk/advanced-js-concepts/blob/main/loopLabels.js)
 
 Let's consider this code:
 
@@ -836,7 +836,7 @@ to actually exit the scope code.
 
 ## Object.freeze
 
-[Script Link](https://github.com/kshayk/advanced-js-conceptys/blob/main/objectFreeze.js)
+[Script Link](https://github.com/kshayk/advanced-js-concepts/blob/main/objectFreeze.js)
 
 Let's assume we have this code:
 
@@ -982,9 +982,557 @@ a ```push()``` function to this array. Note that when freezing an array and tryi
 actually break on run-time even without the ```"use strict"``` usage.
 
 
+## Object.freeze
 
-*closures
-*function chaining
-*pass by value vs. pass by reference
-#   c u s t o m - t i m e o u t - n p m  
- 
+[Script Link](https://github.com/kshayk/advanced-js-concepts/blob/main/map.js)
+
+
+Let's assume we have the following code:
+
+```javascript
+const CURRENCY_MAP = {
+    "United States": "USD",
+    India: "Rupee"
+}
+
+const currency = CURRENCY_MAP["United States"];
+
+console.log(currency);
+```
+
+In this code, we are mapping currencies based on the name of the country.
+Technically, this code works and we can use this to pull data on a specific key. But it becomes an issue
+if we want to loop through it, it becomes un-intuitive and messy.
+
+To solve this, we can use the ```new Map()``` instead of imperatively declaring the map like above.
+
+To create the same map we did above, but instead using the ```Map``` class, we can write:
+
+```javascript
+const CURRENCY_MAP = new Map([
+    ["United States", "USD"],
+    ["India", "Rupee"]
+]);
+
+console.log(CURRENCY_MAP);
+```
+
+The ```Map``` constructor can get a 2 dimensional array that will hold the currency values. Each currency array will have the
+first key as the name of the region, and the second key will have the currency name.
+
+So when we ```console.log``` this map, we will get the following output:
+
+```bash
+Map(2) { 'United States' => 'USD', 'India' => 'Rupee' }
+``` 
+
+So basically the ```Map``` class converted each of the currency arrays to be a key->value pair where the key is the first
+index and the value is the second index.
+
+We can also use the ```Map``` method called ```set``` in order to add key->value pairs into it:
+
+```javascript
+const CURRENCY_MAP = new Map();
+
+CURRENCY_MAP.set("United States", "USD");
+CURRENCY_MAP.set("India", "Rupee");
+```
+
+Both approaches will have the same result, but ```set``` lets us set values dynamically, because sometimes when we declare
+the ```Map``` we don't yet know what all the key->value pairs will be.
+
+Another thing we can do with ```set``` is we can make an entire object be the key in the key->value pair, for example:
+
+```javascript
+CURRENCY_MAP.set({name: "United States"}, "USD");
+
+console.log(CURRENCY_MAP);
+```
+
+When outputting it to the console, we get the following:
+
+```bash
+Map(1) { { name: 'United States' } => 'USD' }
+```
+
+We can also declare that object as a variable and only then set it as the key:
+
+```javascript
+const usa = {name: "United States"}
+CURRENCY_MAP.set(usa, "USD");
+```
+
+Beside the ```set``` method, we also have a ```get``` method. This method will fetch a value from the map, based on the key
+that is sent to the ```get``` function as a parameter.
+
+Since we saw that the key can be an object as well, we can pass the same object to the ```get``` function and this will return
+the value for that key:
+
+```javascript
+const usa = {name: "United States"}
+CURRENCY_MAP.set(usa, "USD");
+
+console.log(CURRENCY_MAP.get(usa));
+```
+
+This will output the value which is ```USD```.
+
+With ```Map``` we can also simply use the ```forEach``` function on the ```CURRENCY_MAP``` variable, and this will fetch 
+the key->value pairs in a form of a regular array:
+
+```javascript
+CURRENCY_MAP.forEach((value, key) => {
+    console.log(key, value);
+})
+```
+
+Which will output:
+
+```bash
+{ name: 'United States' } USD
+```
+
+
+## Array set
+
+[Script Link](https://github.com/kshayk/advanced-js-concepts/blob/main/arraySet.js)
+
+Let's assume we have this array:
+
+```javascript
+const uniqueNumbers = [1, 234, 234, 45];
+```
+
+As indicated by the variable name, this array should have unique numbers. But in this case we have two numbers that are 
+identical.
+
+JS gives an option to use a class named ```Set```. This class gets an array in its constructor and makes sure there are no
+duplicated items in the array. If an array is given and it has duplicated items, it will remove one of the duplicated items:
+
+```javascript
+const uniqueNumbers = [1, 234, 234, 45];
+
+const set = new Set(uniqueNumbers);
+
+console.log(set);
+```
+
+When we log the output, this is what the ```Set``` returns:
+
+```bash
+Set(3) { 1, 234, 45 }
+```
+
+the ```Set``` has several useful functions, for example:
+
+```javascript
+set.has(1);
+```
+
+Will check if there is a value "1" inside the set. Since the array that we passed to the ```Set``` includes "1", it will 
+return true.
+
+We can also use:
+
+```javascript
+set.delete(1);
+```
+
+Which will remove the value "1" from the set.
+
+
+## Binary Math
+
+[Script Link](https://github.com/kshayk/advanced-js-concepts/blob/main/binaryMath.js)
+
+Let's assume we have this code:
+
+```javascript
+console.log(0.1 + 0.2);
+```
+
+Intuitively we might think that the result will be: ```0.3```, but instead the output will actually be: 
+```0.30000000000000004```.
+
+The reason it returns this value, is because when we deal with decimal numbers, the computer translates those numbers to
+binary, and when it does so, the decimal numbers are actually translated to an infinite number. That's the reason why when 
+we do ```.33333333 + .66666666``` we won't actually get "1" as a result, but instead something very close to "1".
+
+This is important to remember especially if we use ```if``` statements on decimal numbers. We must take into consideration
+that when we do ```if(x === .35)``` we might get a false statement because ```x``` actually equaled to ```.350000005```.
+
+So one solution is to write the ```if``` statement as ```if(x >= .35005 && x <= .36000)```.
+
+## Debugging tips
+
+[Script Link](https://github.com/kshayk/advanced-js-concepts/blob/main/debugging.js)
+
+Let's assume we have some code that takes a while to run:
+
+```javascript
+console.log('before');
+for (let i = 0; i < 1000000000; i++) {
+
+}
+console.log('after');
+```
+
+The ```after``` output will print a few moments after the ```before``` output.
+
+But if we want to tell how much time did it take for it to run, we can use 2 ```console``` functions which are called ```time()``` 
+and ```timeEnd()```. The ```time()``` function we put before the code runs and ```timeEnd()``` will be called after the code
+ran.
+
+Both ```time()``` and ```timeEnd()``` will need a parameter which will be the "label" of time check. This will allow JS know
+that we track a certain time between one label to another.
+
+So in our case we can do:
+
+```javascript
+console.time('Timer');
+for (let i = 0; i < 1000000000; i++) {
+
+}
+console.timeEnd('Timer');
+```
+
+And instead of printing ```Timer``` to the console twice, it will only print it once after the run time reached the ```timeEnd()```
+function, and it will also indicate how much time did it take the code to run between the ```time()``` and ```timeEnd()``` functions:
+
+```bash
+Timer: 804.997ms
+```
+
+_________________
+
+Let's assume we have this code: 
+
+```javascript
+const x = 2;
+if (x !== 1) console.log("X is not 1");
+```
+
+Instead of just printing a log to the console, we can print it as and error:
+
+```javascript
+if (x !== 1) console.error("X is not 1");
+```
+
+Or also a warning:
+
+```javascript
+if (x !== 1) console.warn("X is not 1");
+```
+
+But we can also use a console function called ```assert```, that will accept a condition as the first parameter, 
+and if that condition is false, it will print whatever we put in the second parameter:
+
+```javascript
+const x = 2;
+console.assert(x === 1, "X did not equal to 1");
+```
+
+Since ```x``` is not 1, this will output the following:
+
+```bash
+Assertion failed: X did not equal to 1
+```
+
+_____
+
+Let's assume we have the following code:
+
+```javascript
+const people = [
+    {name: "Shay", age: 29},
+    {name: "Yossi", age: 14},
+    {name: "Avrum", age: 87},
+];
+
+console.log(people);
+```
+
+This will print the following:
+
+```bash
+[
+  { name: 'Shay', age: 29 },
+  { name: 'Yossi', age: 14 },
+  { name: 'Avrum', age: 87 }
+]
+```
+
+But sometimes outputting this way can show the data in a pretty unorganized way inside the console. Instead we can use the
+```table()``` console function:
+
+```javascript
+console.table(people);
+```
+
+This will output the data in a much nicer way:
+
+```bash
+┌─────────┬─────────┬─────┐
+│ (index) │  name   │ age │
+├─────────┼─────────┼─────┤
+│    0    │ 'Shay'  │ 29  │
+│    1    │ 'Yossi' │ 14  │
+│    2    │ 'Avrum' │ 87  │
+└─────────┴─────────┴─────┘
+```
+
+____
+
+One more debugging trick is to use the ```debuger``` keyword. Whenever this keyword is used, when running the JS code, it
+will stop the run on the line where the ```debugger``` keyword is in.
+
+This allows us to check the variables' value in real time and will also allow us to go line-by-line in the browser which will
+let us review how the code runs when running the script and will visualize each variable and its current value.
+
+
+## Closures
+
+[Script Link](https://github.com/kshayk/advanced-js-concepts/blob/main/closures.js)
+
+Let's assume we have this piece of code:
+
+```javascript
+const myName = "shay";
+
+function printName() {
+    console.log(myName)
+}
+
+printName();
+```
+
+As we can see from the code, the function prints the ```myName``` variable, even though the variable is not inside the scope
+of the function. 
+
+This in JS, is what's called a closure. The fact that a function can access variables outside its scope is not something
+that a lot of programming languages allowed, but it is allowed in JS and, again, it's called a closure.
+
+In general, in JS, every scope in the code will have access to any code that is outside its scope. The code example above
+is two scopes, one is the root scope where we set the ```myName``` variable and the second scope is the code inside the
+```printName``` function.
+
+If we run this code:
+
+```javascript
+let myName = "shay";
+
+function printName() {
+    console.log(myName)
+}
+
+myName = "Yossi";
+
+printName();
+```
+
+The ```printName()``` function will print ```Yossi```, because even if the variable was ```shay``` when the function was declared,
+When the function is called, it will actually look for the current value of the ```myName``` variable, even if the function was
+already declared before changing ```myName``` to ```Yossi```.
+
+Usually when closures are referred to by people they actually talk about functions inside other functions,
+like this syntax:
+
+```javascript
+function outerFunction(outerVariable) {
+    return function innerFunction(innerVariable) {
+        console.log("Outer variable: ", outerVariable);
+        console.log("Inner variable: ", innerVariable);
+    }
+}
+
+const newFunction = outerFunction("outside");
+
+newFunction("inside");
+```
+
+As we can see, we have an ```outerFunction()``` which gets a parameter that returns an ```innerFunction()``` that also
+gets a parameter.
+
+After the function declaration, we first call the ```outerFunction()```, which returns a reference for the ```innerFunction()```
+which we then call with: ```newFunction("inside");```.
+
+When running this piece of code we get the following output:
+
+```bash
+Outer variable:  outside
+Inner variable:  inside
+```
+
+When we think about it, this might look strange that the inner function was able to both output the inner variable but also
+the outer variable. Logically, what should have happened is that the outer variable will be undefined when we call the inner 
+function since it's allegedly no longer part of the outer function but a stand-alone function that gets a parameter.
+
+But since JS allows closures, this is not the case. Since the inner function is part of the outer function scope, it will always 
+keep track of the variables inside the outer function even if the outer function code has already completed executing long ago.
+
+With this logic, if the outer function also includes variables inside it, the inner function will have access to those
+variables at all time:
+
+```javascript
+function outerFunction(outerVariable) {
+    const outerConst = 'im an outer variable';
+    return function innerFunction(innerVariable) {
+        console.log("Outer variable: ", outerVariable);
+        console.log("Inner variable: ", innerVariable);
+        console.log("Outer const: ", outerConst);
+    }
+}
+```
+
+When calling the inner function we would see:
+
+```bash
+Outer variable:  outside
+Inner variable:  inside
+Outer const:  im an outer variable
+```
+
+
+## Reference VS Value
+
+[Script Link](https://github.com/kshayk/advanced-js-concepts/blob/main/referenceVsValue.js)
+
+In JS, some data types are actually saved (passed) inside a variable not as their actual value, but as a reference to their location
+in the memory.
+
+Integers and strings are passed by value:
+
+```javascript
+// passed by value:
+let a = 10;
+let b = "hello";
+let c = true;
+```
+
+Meaning that the variable itself actually holds the value of those data types. So basically and primitive data type will
+be saved as a values to the variable.
+
+If we do the following:
+
+```javascript
+let a = 10;
+
+let d = a;
+d = d+1;
+```
+
+Although we are referencing ```a``` as the value of ```d```, what we pass to ```d``` is actually the value of ```a``` and
+not a reference of ```a```.
+
+This means that if we change ```d``` later on in the code, the variable ```a``` will not be change because those are two
+separate values for two separate variables.
+
+Furthermore, if we run this code:
+
+```javascript
+let a = 10;
+let d = a;
+
+a = a +3;
+
+console.log(d);
+```
+
+Even though we are referencing the ```a``` value inside the ```d``` variable, after ```d``` has been already set, changing
+the ```a``` variable will not affect the ```d``` value in any way, because it has its own value at this point.
+
+Now, if we declare the ```e``` variable with an array as the value:
+
+```javascript
+let e = [1, 2];
+```
+
+The value that will be stored in the ```e``` variable is actually a reference to the array in the memory. So it will look
+something like that: ```<0x01>```
+
+If we now declare an ```f``` variable that is referencing the ```e``` variable:
+
+```javascript
+let e = [1, 2];
+
+let f = e;
+```
+
+If we then decide to update the ```e``` array:
+
+```javascript
+e.push(4);
+```
+
+When outputting the ```f``` variable, we can see that it was also changed:
+
+```javascript
+console.log(f);
+```
+
+Will output: ```[ 1, 2, 4 ]```
+
+This is because the value inside ```f``` is actually the same memory reference to the array as ```e``` variable has, and 
+unless ```f``` is set to be something else, when changing the array both with ```e.push()``` or ```f.push()```, both ```e```
+and ```f``` will return the same updated array, because they are both connected to the same memory address and this is something
+that can not be changed, unless one of then variables are set to something else completely.
+
+If we decide to assign a difference array to ```e```:
+
+```javascript
+let e = [1, 2];
+
+let f = e;
+
+e = [5,6];
+
+console.log(f);
+```
+
+We might think that outputting ```f``` will result in ```[5,6]``` because its value was set earlier as ```e``` but now ```e``` was changed. But actually,
+since the address reference itself was saved on ```f```, if we then assign a completely new array to ```e```, it will create a new memory
+address (```<0x02>```) since it is a new array, and assign it to ```e```, resulting in ```f``` still holding the address value of the original ```e``` address
+which is ```<0x01>```.
+
+Data types that are passed by reference is also something to take into consideration when checking equality between
+two variables:
+
+```javascript
+let g = [4,5,6];
+let h = g;
+
+console.log(`g === h ${g === h}`);
+console.log(`g == h ${g == h}`);
+```
+
+In this scenario the output will be:
+
+```bash
+g === h true
+g == h true
+```
+
+Because ```g``` and ```h``` both share the same value, the memory address of they array.
+
+On the contrary, if we have this piece of code:
+
+```javascript
+let i = [1,2];
+let j = [1,2];
+
+console.log(`i === j ${i === j}`);
+console.log(`i == j ${i == j}`);
+```
+
+We will get this output:
+
+```bash
+i === j false
+i == j false
+```
+
+The reason ```i``` and ```j``` are not equal, is because the value that is stored in ```i``` is one memory address reference, 
+while the value that is stored in ```j``` is a different memory address reference, since they are both declaring brand-new arrays.
+
+Beside arrays, objects and classes are also passed by reference when assigned to a variable, so all the logic explained above 
+is also applicable for objects and classes.
