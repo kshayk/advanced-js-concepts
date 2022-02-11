@@ -982,7 +982,7 @@ a ```push()``` function to this array. Note that when freezing an array and tryi
 actually break on run-time even without the ```"use strict"``` usage.
 
 
-## Object.freeze
+## map
 
 [Script Link](https://github.com/kshayk/advanced-js-concepts/blob/main/map.js)
 
